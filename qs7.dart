@@ -1,30 +1,18 @@
-// Write a Dart program to display all prime numbers within a range.
+// Question no.7 : Create a function to reverse a given string.
 
-import 'dart:io';
+import "dart:io";
 
-bool isPrime(int number) {
-  if (number <= 1) {
-    return false;
+String reverseString(name) {
+  if (name != null) {
+    String reversed = name.split('').reversed.join('');
+    return "Reversed string: $reversed";
+  } else {
+    return "No input provided.";
   }
-  for (int i = 2; i <= number ~/ 2; i++) {
-    if (number % i == 0) {
-      return false;
-    }
-  }
-  return true;
 }
 
 void main() {
-  stdout.write("Enter the start of the range: ");
-  int start = int.parse(stdin.readLineSync()!);
-
-  stdout.write("Enter the end of the range: ");
-  int end = int.parse(stdin.readLineSync()!);
-
-  print("Prime numbers between $start and $end are:");
-  for (int i = start; i <= end; i++) {
-    if (isPrime(i)) {
-      print(i);
-    }
-  }
+  stdout.write("Enter a string: ");
+  String? name = stdin.readLineSync();
+  print(reverseString(name));
 }

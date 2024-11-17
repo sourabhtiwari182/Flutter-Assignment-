@@ -1,23 +1,18 @@
-// Write a Dart program to find the factorial of a given number.
+// Question no.9 : Implement a function that counts the number of words in a sentence.
 
 import 'dart:io';
 
-int factorial(int number) {
-  int result = 1;
-  for (int i = 1; i <= number; i++) {
-    result *= i;
+countNumberOfWords(sentence) {
+  if (sentence != null && sentence.isNotEmpty) {
+    int wordCount = sentence.trim().split(RegExp(r'\s+')).length;
+    return ("Word count: $wordCount");
+  } else {
+    return ("No input provided.");
   }
-  return result;
 }
 
 void main() {
-  stdout.write("Enter a number: ");
-  int? num = int.tryParse(stdin.readLineSync()!);
-
-  if (num == null || num < 0) {
-    print("Please enter a valid non-negative integer.");
-  } else {
-    print("Factorial of $num is: ${factorial(num)}");
-  }
+  stdout.write("Write a sentence: ");
+  String? sentence = stdin.readLineSync();
+  print(countNumberOfWords(sentence));
 }
-

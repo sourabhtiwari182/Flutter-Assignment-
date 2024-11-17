@@ -1,14 +1,23 @@
-// Write a Dart program to display the Fibonacci series up to 10 terms.
+// Question no.8 : Write a function that checks if a given string is a palindrome (reads the same forwards and backwards).
+
+import "dart:io";
+
+checkPalindrome(Word) {
+  if (Word != null) {
+    String reversed = Word.split('').reversed.join('');
+    if (Word == reversed) {
+      return "$Word is a palindrome.";
+    } else {
+      return "$Word Not a palindrome.";
+    }
+  } else {
+    return "No input provided.";
+  }
+}
 
 void main() {
-  int n1 = 0, n2 = 1, nextTerm;
-
-  print("Fibonacci Series up to 10 terms:");
-
-  for (int i = 1; i <= 10; i++) {
-    print(n1);
-    nextTerm = n1 + n2;
-    n1 = n2;
-    n2 = nextTerm;
-  }
+  stdout.write(
+      "Check whether the given word is palindrome or not: ");
+  String? Word = stdin.readLineSync();
+  print(checkPalindrome(Word));
 }

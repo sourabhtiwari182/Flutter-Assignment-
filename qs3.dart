@@ -1,12 +1,14 @@
-//  Write a Dart program to print the multiplication table of a given number.
+// Question no.3 : write a function that finds the maximum of three numbers.
 
-import 'dart:io';
+int maximumOfThree(a, b, c) {
+  int d = a > b ? (a > c ? a : c) : (b > c ? b : c);
+  return d;
+}
 
 void main() {
-  stdout.write("Which multiplication table you want?: ");
-  int num = int.parse(stdin.readLineSync()!);
-  for (int i = 1; i <= 10; i++) {
-    int mul = num * i;
-    print("$num x $i = $mul");
-  }
+  int a = 600;
+  int b = 500;
+  int c = 10;
+
+  print("Maximum number is: ${maximumOfThree(a, b, c)}");
 }

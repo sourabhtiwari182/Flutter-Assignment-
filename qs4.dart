@@ -1,13 +1,16 @@
-//  Write a Dart program to count the total number of digits in a number.
+// Question no.4 : Implement a function that calculates the factorial of a number
 
-import 'dart:io';
+import "dart:io";
 
-void main() {
-  stdout.write('Enter a number: ');
-  String input = stdin.readLineSync()!;
-  int numDigits = input.length;
-
-  // Print the result
-  print('The total number of digits is: $numDigits');
+  int factorial(int n) {
+    if (n <= 1) {
+      return 1;
+  } else {
+    return n * factorial(n - 1);
+  }
 }
-
+void main(){
+  stdout.write("Enter a number which you want a factorial:  ");
+  int number = int.parse(stdin.readLineSync()!);
+  print("The factorial of $number is ${factorial(number)}");
+}

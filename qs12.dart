@@ -1,22 +1,11 @@
-// Write a Dart program to find the sum of the series up to n terms.
+// Question no.12 : Create a function that finds the largest element in a list.
 
-import 'dart:io';
-
-int sumOfSeries(int n) {
-  int sum = 0;
-  for (int i = 1; i <= n; i++) {
-    sum += i;
-  }
-  return sum;
+String findLargestInList(Numbers) {
+  int largest = Numbers.reduce((a, b) => a > b ? a : b);
+  return "$largest is largest";
 }
 
 void main() {
-  stdout.write("Enter the number of terms (n): ");
-  int? n = int.tryParse(stdin.readLineSync()!);
-
-  if (n == null || n <= 0) {
-    print("Please enter a valid positive integer.");
-  } else {
-    print("The sum of the series up to $n terms is: ${sumOfSeries(n)}");
-  }
+  List<dynamic> Numbers = [12, 25, 26, 24, 29, 226, 28, 20, 36];
+  print(findLargestInList(Numbers));
 }
