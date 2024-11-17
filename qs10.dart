@@ -1,24 +1,27 @@
-// Write a Dart program to check whether a character is a vowel or consonant using a switch case.
+// Write a Dart program to reverse a given integer number
+
 import 'dart:io';
 
-void main() {
-  stdout.write("Check char is vowel or not?: ");
-  String? input = stdin.readLineSync();
+int reverseNumber(int number) {
+  int reverse = 0;
 
-  if (input != null && input.length == 1) {
-    String char = input.toLowerCase();
-    switch (char) {
-      case "a":
-      case "e":
-      case "i":
-      case "o":
-      case "u":
-        print("$char is vowel");
-        break;
-      default:
-        print("$char is a consonant");
-    }
+  while (number != 0) {
+    int remainder = number % 10;
+    reverse = reverse * 10 + remainder;
+    number ~/= 10;
+  }
+
+  return reverse;
+}
+
+void main() {
+  stdout.write("Enter an integer number: ");
+  int? num = int.tryParse(stdin.readLineSync()!);
+
+  if (num == null) {
+    print("Please enter a valid integer.");
   } else {
-    print("Enter a valid single character");
+    print("Reversed number: ${reverseNumber(num)}");
   }
 }
+

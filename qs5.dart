@@ -1,14 +1,13 @@
-// Write a Dart program to check whether a number is even or odd.
-
-import 'dart:io';
+// Write a Dart program to print the following number pattern:
+//  1
+//  22
+//  333
+//  4444
+//  55555
 
 void main() {
-  stdout.write("Check number is odd or even: ");
-  int num = int.parse(stdin.readLineSync()!);
-
-  if (num % 2 == 0) {
-    print("$num is even number");
-  } else {
-    print("$num is odd number");
+  for (int i = 1; i <= 5; i++) {
+    String rep = i.toString();
+    print(rep * i);
   }
 }

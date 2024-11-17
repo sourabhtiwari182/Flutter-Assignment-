@@ -1,16 +1,12 @@
-// Write a Dart program to check whether a number is negative, positive, or zero.
+//  Write a Dart program to print the multiplication table of a given number.
+
 import 'dart:io';
 
 void main() {
-  stdout.write("Enter a number: ");
+  stdout.write("Which multiplication table you want?: ");
   int num = int.parse(stdin.readLineSync()!);
-
-  if (num > 0) {
-    print("Number is +ve");
-  } else if (num < 0) {
-    print("Number is -ve");
-  } else {
-    print("Number is zero");
+  for (int i = 1; i <= 10; i++) {
+    int mul = num * i;
+    print("$num x $i = $mul");
   }
 }
-

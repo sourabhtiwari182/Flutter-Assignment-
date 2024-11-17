@@ -1,19 +1,9 @@
-//  Write a Dart program to find the maximum between two numbers.
-import 'dart:io';
+// Write a Dart program to print the first 10 natural numbers using a while loop.
 
 void main() {
-  stdout.write("Enter first number: ");
-  int num1 = int.parse(stdin.readLineSync()!);
-
-  stdout.write("Enter second number: ");
-  int num2 = int.parse(stdin.readLineSync()!);
-
-  // finding max number
-  if (num1 > num2) {
-    print("Maximum number is $num1");
-  } else if (num1 < num2) {
-    print("Maximum number is $num2");
-  } else {
-    print("Both are equal");
+  int N = 1;
+  while (N <= 10) {
+    print(N);
+    N += 1;
   }
 }
